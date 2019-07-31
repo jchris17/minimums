@@ -1,0 +1,31 @@
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+<h2>This will not be saved.</h2>
+<hr />
+<div id="content">
+  <h3>Hello, this is a H3 tag</h3>
+
+  <p>This paragraph will be saved.</p>
+</div>
+<div id="editor"></div>
+<hr />
+<button id="cmd">generate PDF</button>
+
+<script>
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+    '#editor': function(element, renderer) {
+      return true;
+    },
+  };
+
+  $('#cmd').click(function() {
+    doc.fromHTML($('#content').html(), 15, 15, {
+      width: 170,
+      elementHandlers: specialElementHandlers,
+    });
+    doc.save('report.pdf');
+  });
+</script>
