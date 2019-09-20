@@ -1,0 +1,14 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "description": "Dockerized Express App for AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Helena Merk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
