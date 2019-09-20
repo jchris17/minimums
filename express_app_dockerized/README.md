@@ -1,24 +1,34 @@
 # ON AWS
 Create a new EC2 Instance
 
-make sure inbound security group rules allow for your current IP address and port that your app runs on
+Make sure inbound security group rules allow for your current IP address and port that your app runs on. This app defaults to port 3000.
 
-download pem file
-chmod 600 pem file
-
-use it to ssh into instance with the url given in the portal:
+Download the .pem file when prompted, and change permissions.
 ```
- -i "../Downloads/OEM_FILE_NAME.pem" * ubuntu@ec2-52-12-8-25.us-west-2.compute.amazonaws.com
+chmod 600 ~/Downloads/PEM_FILE_NAME.pem
+```
+
+Use the pem file to ssh into instance with the url given in the portal:
+```
+ssh -i "../Downloads/PEM_FILE_NAME.pem" * ubuntu@ec2-52-12-8-25.us-west-2.compute.amazonaws.com
 ```
 install node from nodejs.org for correct instance type
 
 install build essentials
 
-scp files up! example:
- scp -i "../Downloads/demo.pem" * ubuntu@ec2-52-12-8-25.us-west-2.compute.amazonaws.com:~/source
+# Uploading Data to Instance.
 
+## Option 1: scp files up!
+```
+scp -i "../Downloads/demo.pem" * ubuntu@ec2-52-12-8-25.us-west-2.compute.amazonaws.com:~/source
 
-# DOCKERIZE
+ssh ...
+npm install
+node app.js
+```
+
+## Option 2: Dockerize!!
+
 DOCKERFILE is already created for you. Used this guide:
 https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 
