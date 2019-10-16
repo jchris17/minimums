@@ -8,6 +8,8 @@
 
 3. Install the Google Cloud SDK
 
+[https://cloud.google.com/sdk/docs/quickstarts](Quickstart for Linux, Ubuntu, macOs, Windows, ...)
+
 4. Install Node.js
 
 ### Express App
@@ -42,7 +44,7 @@ const server = app.listen(8080, () => {
   const host = server.address().address;
   const port = server.address().port;
 
-  console.log(`Example app! We are listening on http://${host}:${port}`);
+  console.log(`Example app! We are listening on port ${port}`);
 });
 ```
 
@@ -108,14 +110,14 @@ html
 
 4. Create an ```index.pug``` file also in ```views```
 
-This file will extend layout. 
+This file will extend layout.
 
 ```
 extends layout
 
 block layout-content
   div.View
-    h1.Banner WHATABYTE
+    h1.Banner HACKDUKE DEMO
     div.Message
       div.Title
         h3 Making the Best
@@ -137,6 +139,11 @@ Add the following two lines before any route definitions:
 ```
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+```
+
+Also, make sure you require ```path``` at the top of your file:
+```
+const path = require('path');
 ```
 
 Change the render method to pass in ```title``` as a value, and ```index``` as the template:
@@ -200,7 +207,7 @@ html
     link(rel="shortcut icon", href="/favicon.ico")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color", content="#000000")
-    title #{title} | WHATABYTE
+    title #{title} | HACKDUKE DEMO
     link(rel="stylesheet" href="/style.css")
   body
     div#root
@@ -227,5 +234,3 @@ block layout-content
   div.View.WelcomeView
   // rest of the template...
 ```
-
-
