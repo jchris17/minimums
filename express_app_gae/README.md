@@ -1,18 +1,21 @@
-## Creating and Hosting an Express App on Google App Engine (Flexible Environment)
+# Creating and Hosting an Express App on Google App Engine (Flexible Environment)
 
 
-### Configure Google Cloud Platform Console
-1. Create a Project
+## Configure Google Cloud Platform Console
+1. Install Node.js
 
-2. Enable billing
+Easiest is [via a package manager](https://nodejs.org/en/download/package-manager)
 
-3. Install the Google Cloud SDK
+2. Install the Google Cloud SDK
 
-[https://cloud.google.com/sdk/docs/quickstarts](Quickstart for Linux, Ubuntu, macOs, Windows, ...)
+[Follow OS Specific Install Guide](https://cloud.google.com/sdk/docs/quickstarts)
 
-4. Install Node.js
+3. Create a Project
 
-### Express App
+4. Enable billing
+
+
+## Express App
 
 1. Initialize app
 ```
@@ -48,14 +51,14 @@ const server = app.listen(8080, () => {
 });
 ```
 
-### Run App
+## Run App
 
 1. Start the command in your terminal:
 ```
 npm start
 ```
 
-2. Visit the launched web app at [http://localhost:8080](localhost:8080). Make sure you see your ```Hello``` message
+2. Visit the launched web app at [localhost:8080](http://localhost:8080). Make sure you see your ```Hello``` message
 
 ### Deploy App
 1. app.yaml files tell Google App Engine how to configure your app
@@ -71,15 +74,19 @@ gcloud app deploy
 
 3. Visit your project url! ```http://PROJECT_ID.appspot.com``` to see the same message as before!
 
-### Custom Domain
+## Custom Domain
+
+1. If this is a hackathon... you likely get a free domain.
+
+[GCP Custom Domain Documentation](https://cloud.google.com/appengine/docs/flexible/nodejs/mapping-custom-domains)
+
+---
 
 
-//////
-
-## Extending the Web App
+# Extending the Web App
 Now that it is all up and running... let us make it actually look good.
 
-### Using PUG as a templating engine
+## Using PUG as a templating engine
 Pug offers "offers templates that can be conditionally rendered, hydrated with data available in the server, and composed using inheritance to create sleek pages."
 
 1. Install ```pug``` as a dependency.
@@ -160,7 +167,7 @@ Quick notes...
 ```res.render()``` takes in a second, optional parameter, locals, which is an object that lets you pass data from the controller to the template. Its object properties define local variables that can be accessed by the template. This is done above with ```{ title: "Home" }```
 
 
-## Styling your web app
+# Styling your web app
 
 You need to place styling materials into a ```public``` directory. All stylesheets and images belong here.
 
