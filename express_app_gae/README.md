@@ -14,6 +14,11 @@ Easiest is [via a package manager](https://nodejs.org/en/download/package-manage
 
 4. Enable billing
 
+// Useful commands...
+```
+gcloud auth login // prompts login in browser
+gcloud config set project PROJECT_ID 
+```
 
 ## Express App
 
